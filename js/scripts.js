@@ -1,6 +1,10 @@
-$(function() {
-  var originalExp = prompt("Enter an expression to be calculated:");
 
+$(function() {
+var originalExp = document.getElementById("form").innerHTML;
+// var originalExp = prompt("enter...");
+
+$("#buttonCal").click(function() {
+  alert(originalExp);
   var splitArray = originalExp.split("");
   var number1 = parseInt(splitArray[0]);
   var number2 = parseInt(splitArray[2]);
@@ -37,5 +41,7 @@ $(function() {
     };
       alert(multiply(number1, number2));
   }
+
+})
 
 })
