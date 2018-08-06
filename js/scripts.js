@@ -1,50 +1,41 @@
 $(function() {
-  // var number1 = parseInt(prompt("Please enter a number:"));
-  // var number2 = parseInt(prompt("Please enter another number:"));
-  $("#7").click(function() {
-    var number1 = 7;
-  }
-  )
-  $("#8").click(function() {
-    var number2 = 8;
-  }
-  )
-  $("#division").click(function() {
-    // var divide = function(number1, number2) {
-    var result=number1/number2;
+  var originalExp = prompt("Enter an expression to be calculated:");
+
+  var splitArray = originalExp.split("");
+  var number1 = parseInt(splitArray[0]);
+  var number2 = parseInt(splitArray[2]);
+  var operator = splitArray[1];
+
+  if (operator === "+") {
+    var add = function(number1, number2) {
+    var result = number1 + number2;
     return result;
     };
-    alert(result);
-  )
+    alert(add(number1, number2));
+  }
 
-  // // Add
-  // var add = function(number1, number2) {
-  //   return number1 + number2;
-  // };
-  // var resultA = add(number1,number2);
-  //
-  // // Subtract
-  // var subtract = function(number1, number2) {
-  //   return number1 - number2;
-  // };
-  // var resultS = subtract(number1,number2);
-  //
-  // // Multiply
-  // var multiply = function(number1, number2) {
-  //   return number1*number2;
-  // };
-  // var resultM = multiply(number1,number2);
-  //
-  // // Divide
-  // var divide = function(number1, number2) {
-  //   return number1/number2;
-  // };
-  // var resultD = divide(number1,number2);
-  //
-  //
-  // alert(resultA);
-  // alert(resultS);
-  // alert(resultM);
-  // alert(resultD);
+  else if (operator === "-") {
+    var subtract = function(number1, number2) {
+      var result = number1 - number2;
+      return result;
+    };
+      alert(subtract(number1, number2));
+  }
+
+  else if (operator === "/") {
+    var division = function(number1, number2) {
+    var result = number1 / number2;
+    return result;
+    };
+      alert(division(number1, number2));
+  }
+
+  else {
+    var multiply= function(number1, number2) {
+    var result = number1 * number2;
+    return result;
+    };
+      alert(multiply(number1, number2));
+  }
 
 })
