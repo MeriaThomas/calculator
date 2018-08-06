@@ -1,0 +1,14 @@
+h1 {
+  text-align: center;
+}
+
+button {
+  width: 180px;
+
+}
+
+.col-md-3 {
+  text-align:center;
+  padding-left: 0;
+  padding-right: 0;
+}
