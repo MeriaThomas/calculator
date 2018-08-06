@@ -1,10 +1,8 @@
 
 $(function() {
-var originalExp = document.getElementById("form").innerHTML;
-// var originalExp = prompt("enter...");
-
-$("#buttonCal").click(function() {
-  alert(originalExp);
+$("#buttonCal").click(function(event) {
+  event.preventDefault();
+  var originalExp = $("#form").val();
   var splitArray = originalExp.split("");
   var number1 = parseInt(splitArray[0]);
   var number2 = parseInt(splitArray[2]);
@@ -15,7 +13,8 @@ $("#buttonCal").click(function() {
     var result = number1 + number2;
     return result;
     };
-    alert(add(number1, number2));
+    // alert(add(number1, number2));
+    $("#result").val(add(number1, number2));
   }
 
   else if (operator === "-") {
@@ -23,7 +22,7 @@ $("#buttonCal").click(function() {
       var result = number1 - number2;
       return result;
     };
-      alert(subtract(number1, number2));
+      $("#result").val(subtract(number1, number2));
   }
 
   else if (operator === "/") {
@@ -31,7 +30,7 @@ $("#buttonCal").click(function() {
     var result = number1 / number2;
     return result;
     };
-      alert(division(number1, number2));
+      $("#result").val(division(number1, number2));
   }
 
   else {
@@ -39,7 +38,7 @@ $("#buttonCal").click(function() {
     var result = number1 * number2;
     return result;
     };
-      alert(multiply(number1, number2));
+      $("#result").val(multiply(number1, number2));
   }
 
 })
