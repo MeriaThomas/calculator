@@ -1,46 +1,29 @@
+//Back-end logic:
+var add = function(number1, number2) {
+return number1 + number2;
+};
 
-$(function() {
-$("#buttonCal").click(function(event) {
-  event.preventDefault();
-  var originalExp = $("#form").val();
-  var splitArray = originalExp.split("");
-  var number1 = parseInt(splitArray[0]);
-  var number2 = parseInt(splitArray[2]);
-  var operator = splitArray[1];
+var subtract = function(number1, number2) {
+return number1 - number2;
+};
 
-  if (operator === "+") {
-    var add = function(number1, number2) {
-    var result = number1 + number2;
-    return result;
-    };
-    // alert(add(number1, number2));
-    $("#result").val(add(number1, number2));
-  }
+var multiply = function(number1, number2) {
+return number1 * number2;
+};
 
-  else if (operator === "-") {
-    var subtract = function(number1, number2) {
-      var result = number1 - number2;
-      return result;
-    };
-      $("#result").val(subtract(number1, number2));
-  }
+var divide = function(number1, number2) {
+return number1 / number2;
+};
 
-  else if (operator === "/") {
-    var division = function(number1, number2) {
-    var result = number1 / number2;
-    return result;
-    };
-      $("#result").val(division(number1, number2));
-  }
+// Front-end logic:
+$(document).ready(function() {
 
-  else {
-    var multiply= function(number1, number2) {
-    var result = number1 * number2;
-    return result;
-    };
-      $("#result").val(multiply(number1, number2));
-  }
+  $("form#add").submit(function(event) {
+    event.preventDefault();
+    var number1 = parseInt($("#add1").val());
+    var number2 = parseInt($("#add2").val());
+    var result = add(number1, number2);
+    $("#output").text(result);
+});
 
-})
-
-})
+});
