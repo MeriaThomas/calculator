@@ -12,3 +12,8 @@ button {
   padding-left: 0;
   padding-right: 0;
 }
+
+#output, #outputS, #outputM, #outputD {
+  background-color: pink;
+  margin: 10px;
+}
